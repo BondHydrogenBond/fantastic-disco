@@ -1,0 +1,39 @@
+// Marina Marot CS2 assignment "First C++ Practice"
+
+// comments for Adrian  
+// 1. unsure if this is correct way to submit the assignments via GutHub
+// 2. unsure if the MAIN function in C++ is the equivalent to DRAW/SETUP in Processing or just a regular method we use to do something
+
+//code begins
+#include <iostream>
+
+using namespace std;
+
+char blackbox()
+{
+  char word = eat; 
+  cout << "Word can be eat, sleep or code" << endl;
+  cout << "Word is set to" << word << endl;
+
+  return char;
+
+
+}
+
+int main()
+{
+  
+   // depending on what the variable, system prints a diiferent statement
+   
+   if (word = eat)
+   {cout << "You should be sleeping" << endl;
+   }
+   else if (word = sleep)
+   {cout << "You should be coding" << endl;
+   }
+   else (word = code)
+   {cout << "You should be eating" << endl;
+   }
+
+  return 0;
+}
