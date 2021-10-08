@@ -2,38 +2,30 @@
 
 // comments for Adrian  
 // 1. unsure if this is correct way to submit the assignments via GutHub
-// 2. unsure if the MAIN function in C++ is the equivalent to DRAW/SETUP in Processing or just a regular method we use to do something
+// 2. unsure if the MAIN function in C++ is the equivalent to DRAW/SETUP in Processing or just a regular method we use to do something - figured it out
+// 3. this took more time to think of something for the function to do than to actually do it
 
 //code begins
 #include <iostream>
 
 using namespace std;
 
-char blackbox()
+int doublethenumber(int number)
 {
-  char word = eat; 
-  cout << "Word can be eat, sleep or code" << endl;
-  cout << "Word is set to" << word << endl;
+   number = number*2;
 
-  return char;
-
+  return number;
 
 }
 
 int main()
 {
-  
+  int number = 0; 
    // depending on what the variable, system prints a diiferent statement
    
-   if (word = eat)
-   {cout << "You should be sleeping" << endl;
-   }
-   else if (word = sleep)
-   {cout << "You should be coding" << endl;
-   }
-   else (word = code)
-   {cout << "You should be eating" << endl;
-   }
+  cout << number << endl;
+  number = doublethenumber (number);
+  cout << number << endl;
 
   return 0;
 }
