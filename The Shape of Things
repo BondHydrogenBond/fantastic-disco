@@ -4,27 +4,4 @@
 //comments for Adrian
 
 
-#include <iostream>
-#include <vector>
-#include <string>
-
-using namespace std;
-
-// a manual way of drawing this
-
-int main()
-{
-   
-  cout << "#                 #" << endl;
-  cout << " ##             ## " << endl;
-  cout << "  ###         ###  " << endl;
-  cout << "   ####     ####   " << endl;
-  cout << "    ###########    " << endl;
-  cout << "    ###########    " << endl;
-  cout << "   ####     ####   " << endl;
-  cout << "  ###         ###  " << endl;
-  cout << " ##             ## " << endl;
-  cout << "#                 #" << endl;
-
-  return 0;
-}
+// didn't read first, completely misunderstood the assignment
