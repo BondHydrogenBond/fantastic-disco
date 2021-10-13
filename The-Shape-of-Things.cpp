@@ -21,7 +21,7 @@ int main()
     for (int column = 1; column <= 26 ; column ++)
        { 
 
-        //I tried referencing rows and deducting the current row to recalculate both symmetrical rows but it didnt work properly
+        //I tried referencing rows and deducting the current row to recalculate both symmetrical rows/columns but it didnt work properly
         /* example (
 
         int maxColumn = 26;
