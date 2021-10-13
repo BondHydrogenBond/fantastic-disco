@@ -12,9 +12,9 @@
 
 using namespace std;
 
-int doublethenumber(int number)
+int doubleTheNumber(int number)
 {
-   number = number*2;
+  number = number * 2;
 
   return number;
 
@@ -26,7 +26,7 @@ int main()
    // depending on what the variable, system prints a diiferent statement
    
   cout << "number is " <<  number << endl;
-  number = doublethenumber (number);
+  number = doubleTheNumber(number);
   cout << "double number is " << number << endl;
 
   return 0;
