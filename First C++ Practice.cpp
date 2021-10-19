@@ -17,7 +17,7 @@ int doubleTheNumber(int number)
 {
   int doubleNumber = number * 2;
 
-  return number;
+  return doubleNumber;
 
 }
 
