@@ -1,15 +1,15 @@
-#include <iostream>
-#include <vector>
-#include <string>
-
-using namespace std;
-
 /*
 comments for Adrian
 I found the isupper function that does the same as my 
 manual ist of all letters in uppercase - hope that's okay
 */
 
+
+#include <iostream>
+#include <vector>
+#include <string>
+
+using namespace std;
 
 int main()
 {
@@ -21,8 +21,11 @@ int main()
   for(int i = 0; i < testArraySize; i++)
   {
     character = testArray[i];
+     
     if (isupper(character)) 
-    {upperCaseFound++;}
+    {
+      upperCaseFound++;
+    }
   }
 
   cout << "Number of upper case characters found is :" << upperCaseFound << endl;
