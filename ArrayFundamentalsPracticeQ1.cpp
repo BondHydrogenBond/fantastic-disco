@@ -4,6 +4,13 @@
 
 using namespace std;
 
+/**
+comments for Adrian
+I'm counting how many times is the previoous number smaller than the next after going through the array from 
+the first to the last value (from 0 to array.size-1). If the number of time the previous value in the array 
+was smaller than the next s equal to the size of array-1, we're sorted 
+**/
+
 const int testArraySize = 7;
 int testArray[testArraySize] = {1, 2, 10, 4, 10, 7, 8};
 
@@ -18,9 +25,7 @@ bool isSorted(int testArray[], int testArraySize)
      {
        arrayCount++;
      }
-
   }
-  
   
   if (arrayCount== testArraySize-1)
     {
