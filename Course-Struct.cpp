@@ -15,8 +15,6 @@ struct course
 
 int numCoursesInDepartment(course courseArray[], string department, int arraySize, int numCourses)
 {
-   
-
   for (int i = 0; i < arraySize; i++) // sets the department with which we are comparing the others to
   { 
     for (int j = 1; j < arraySize; j++) // iterates through all departments while i == a specific number
@@ -25,7 +23,6 @@ int numCoursesInDepartment(course courseArray[], string department, int arraySiz
         {
            numCourses++;  
         }   
-
         // idea is to compare one department (i) with all the other ones (j) and add one to numCourse every time 
         // we find the same department
         // issue is numCourses is a variable, so it will change with each department, so the below return
@@ -33,13 +30,10 @@ int numCoursesInDepartment(course courseArray[], string department, int arraySiz
         // also I don't know hw to call this function to retunr a value at line 65 with a corresponding value (I tried calling
         // the numCoursesInDepartment(courseArray[i], coursearray[i].department, arraySize, &numCourses) but 
         // to no avail)
-
-
         return numCourses; 
-        
-    }
-  }
-}
+     }
+   }
+ }
 
 
 int main()
@@ -62,12 +56,10 @@ int main()
       {"BIOL", 700, "Stem Cell and Regenerative Biology"},
     };
    
-   
     for (int i = 0; i < arraySize; i++) 
     {
      cout << "The department" << courseArray[i].department << "has" << numCourses << "courses" << endl;
     }
-    
 
     return (0);
   
