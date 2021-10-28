@@ -38,51 +38,49 @@ int main()
     cin.get(inputChar); 
     totalCharacters++;
 
-    if (inputChar != 32 && inputChar != 10)
-       {charactersNumber++;}
+    if (inputChar != 32 && inputChar != 10) {
+          charactersNumber++;
+        }
 
     if (inputChar == 'a' || inputChar == 'e' || inputChar == 'i' || inputChar == 'o' 
        || inputChar == 'u' || inputChar == 'A' || inputChar == 'E' || inputChar == 'I' 
-       || inputChar == 'O' || inputChar == 'U')
-       {vowel++;}
+       || inputChar == 'O' || inputChar == 'U') {
+          vowel++;
+         }
     
-    if (vowel > maxVowels)
-       {maxVowels = vowel;}
-
-    if (charactersNumber > maxCharacters)
-       {maxCharacters = charactersNumber;}
-
-    if ((inputChar == 32) && (charactersNumber > 1) && (lastCharIsSpace == false)) // once there's a space, values per individual 
-    //words reset and counting starts again
-    // note maxVharacters and maxVowels stay the same, they're only changed if a higher value comes along
-    {
-      charactersNumber = 0; //this resets for each new word
-      vowel = 0; //this resets for each new word
-      word++;
-    }
-    
-
-    if (inputChar == 10) 
-   { 
-     if ((totalCharacters == 1) || (lastCharIsSpace == true && totalCharacters == 2))
-        {cout << "There was no text entered" << endl;}
-
-
-     if (totalCharacters > 2){
-       if (lastCharIsSpace == false){
-         word = word+1;
+    if (vowel > maxVowels) {
+          maxVowels = vowel;
         }
 
-         cout << "The number of words is " << word << endl; 
-         cout << "The longest word had " << maxCharacters << " characters\n"; //***
-         cout << "The maximum number of vowels in a word was " << maxVowels << " vowels\n";
+    if (charactersNumber > maxCharacters) {
+          maxCharacters = charactersNumber;
+        }
 
-         return(0); 
-     }
-      
+    if ((inputChar == 32) && (charactersNumber >= 1) && (lastCharIsSpace == false)) { // once there's a space, values per individual 
+    //words reset and counting starts again
+    // note maxVharacters and maxVowels stay the same, they're only changed if a higher value comes along
+          charactersNumber = 0; //this resets for each new word
+          vowel = 0; //this resets for each new word
+          word++;
+        }    
 
-    }
-      lastCharWasSpace();
-  } 
-  
+		if (inputChar == 10) 
+        { 
+          if ((totalCharacters == 1) || (lastCharIsSpace == true && totalCharacters == 2)) {
+            cout << "There was no text entered" << endl;
+          }	
+            if (totalCharacters > 2) {
+              if (lastCharIsSpace == false) {
+                word = word+1;
+              }
+
+              cout << "The number of words is " << word << endl; 
+              cout << "The longest word had " << maxCharacters << " characters\n"; //***
+              cout << "The maximum number of vowels in a word was " << maxVowels << " vowels\n";
+
+            return(0); 
+          }
+        }
+		lastCharWasSpace();
+	}   
 }
