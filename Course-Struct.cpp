@@ -12,9 +12,11 @@ struct course
 //funtion takes an array of course structs, and counts how many courses there are in 
 // a department given as a parameter. 
 
-int numCoursesInDepartment(course courseArray[], string department, int arraySize, int numCourses, int course)
+int numCoursesInDepartment(course courseArray[], int arraySize, int fixedI)
 {
-  while (int i = course) //what I want is a fixed number (one course) here to compare against other courses
+  int numCourses; //I don't think I need this variable anywhere but here, so I excluded it from the above brackets
+
+  while (int i = fixedI) //what I want is a fixed number (one course) here to compare against other courses
   { 
     for (int j = 1; j < arraySize; j++) // iterates through all departments while i == specific number (course)
     { 
@@ -30,8 +32,6 @@ int numCoursesInDepartment(course courseArray[], string department, int arraySiz
 int main()
 {
     //initialize and declare array of 10 courses
-    int numCourses = 1;
-    
     const int arraySize = 10;
     course courseArray[arraySize] =
     {
@@ -46,17 +46,13 @@ int main()
       {"MATH", 1001, "Statistics"},
       {"BIOL", 700, "Stem Cell and Regenerative Biology"},
     };
-   
     
-    for(int course = 0; course < arraySize; course++) 
+    for(int fixedI = 0; fixedI < arraySize; fixedI++) 
     {
-     cout << "The department" << courseArray[course].department << "has" 
-     << numCoursesInDepartment(courseArray[], courseArray[course].department, 
-     arraySize, numCourses, course) << "courses" << endl;
+     cout << "The department" << courseArray[fixedI].department << "has" << numCoursesInDepartment(courseArray[fixedI], arraySize, fixedI) << "courses" << endl;
 
      //what I'm trying to do here is get the specific count per each course variable
      //by calling the function with a course that updates here
-     //I'm getting an error I have no idea what is 
      
     }
 
