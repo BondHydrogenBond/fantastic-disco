@@ -7,34 +7,25 @@ struct course
   string department;
   int number;
   string title;
- 
 };
 
 //funtion takes an array of course structs, and counts how many courses there are in 
 // a department given as a parameter. 
 
-int numCoursesInDepartment(course courseArray[], string department, int arraySize, int numCourses)
+int numCoursesInDepartment(course courseArray[], string department, int arraySize, int numCourses, int course)
 {
-  for (int i = 0; i < arraySize; i++) // sets the department with which we are comparing the others to
+  while (int i = course) //what I want is a fixed number (one course) here to compare against other courses
   { 
-    for (int j = 1; j < arraySize; j++) // iterates through all departments while i == a specific number
+    for (int j = 1; j < arraySize; j++) // iterates through all departments while i == specific number (course)
     { 
       if (courseArray[i].department == courseArray[j].department)
-        {
-           numCourses++;  
-        }   
-        // idea is to compare one department (i) with all the other ones (j) and add one to numCourse every time 
-        // we find the same department
-        // issue is numCourses is a variable, so it will change with each department, so the below return
-        // cannot be placed at the very end, because all we'll get is the last i comparison
-        // also I don't know hw to call this function to retunr a value at line 65 with a corresponding value (I tried calling
-        // the numCoursesInDepartment(courseArray[i], coursearray[i].department, arraySize, &numCourses) but 
-        // to no avail)
-        return numCourses; 
-     }
-   }
- }
-
+      {
+        numCourses++; 
+      }     
+    }
+  }
+  return numCourses; 
+}
 
 int main()
 {
@@ -56,11 +47,18 @@ int main()
       {"BIOL", 700, "Stem Cell and Regenerative Biology"},
     };
    
-    for (int i = 0; i < arraySize; i++) 
+    
+    for(int course = 0; course < arraySize; course++) 
     {
-     cout << "The department" << courseArray[i].department << "has" << numCourses << "courses" << endl;
+     cout << "The department" << courseArray[course].department << "has" 
+     << numCoursesInDepartment(courseArray[], courseArray[course].department, 
+     arraySize, numCourses, course) << "courses" << endl;
+
+     //what I'm trying to do here is get the specific count per each course variable
+     //by calling the function with a course that updates here
+     //I'm getting an error I have no idea what is 
+     
     }
 
     return (0);
-  
 }
