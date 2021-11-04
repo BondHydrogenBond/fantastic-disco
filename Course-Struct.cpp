@@ -12,21 +12,19 @@ struct course
 //funtion takes an array of course structs, and counts how many courses there are in 
 // a department given as a parameter. 
 
-int numCoursesInDepartment(course courseArray[], int arraySize, int fixedI)
+int numCoursesInDepartment(course courseArray[], int arraySize, string department)
 {
-  int numCourses; //I don't think I need this variable anywhere but here, so I excluded it from the above brackets
+    int numCourses = 0;
 
-  while (int i = fixedI) //what I want is a fixed number (one course) here to compare against other courses
-  { 
-    for (int j = 1; j < arraySize; j++) // iterates through all departments while i == specific number (course)
-    { 
-      if (courseArray[i].department == courseArray[j].department)
-      {
-        numCourses++; 
-      }     
-    }
-  }
-  return numCourses; 
+      for (int i = 0; i < arraySize; i++) 
+      { 
+        if (courseArray[i].department == department)
+        {
+          numCourses++; 
+        }     
+      }
+    
+    return numCourses; 
 }
 
 int main()
@@ -47,12 +45,11 @@ int main()
       {"BIOL", 700, "Stem Cell and Regenerative Biology"},
     };
     
-    for(int fixedI = 0; fixedI < arraySize; fixedI++) 
+    for(int i= 0; i < arraySize; i++) 
     {
-     cout << "The department" << courseArray[fixedI].department << "has" << numCoursesInDepartment(courseArray[fixedI], arraySize, fixedI) << "courses" << endl;
 
-     //what I'm trying to do here is get the specific count per each course variable
-     //by calling the function with a course that updates here
+     cout << "The department" << courseArray[i].department << "has" 
+     << numCoursesInDepartment(courseArray, arraySize, courseArray[i].department) << "courses" << endl;
      
     }
 
