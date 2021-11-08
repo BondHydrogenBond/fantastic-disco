@@ -12,7 +12,9 @@ struct domino
 
 void drawAsterix(domino dominoArray[], int arraySize){
 
-  for (int index = 0; index < arraySize; index++){
+  int index = 0;
+
+  while(index < arraySize){
 
     int row = 0;
     int column = 0;
@@ -63,19 +65,20 @@ void drawAsterix(domino dominoArray[], int arraySize){
             cout << "#" << endl;
           }
         }
+
+        cout << "       " << endl;
+        cout << "-------" << endl;
+        dominoArray[index].setOne;
+        cout << "-------" << endl;
+        dominoArray[index].setTwo;
+        cout << "-------" << endl;
+        cout << "       " << endl;
+
+        index++;
+
       }
     }
-  
-    cout << "       " << endl;
-    cout << "-------" << endl;
-    dominoArray[index].setOne;
-    cout << "-------" << endl;
-    dominoArray[index].setTwo;
-    cout << "-------" << endl;
-    cout << "       " << endl;
-  
   }
-
 }
 
 
