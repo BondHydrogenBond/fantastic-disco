@@ -8,76 +8,81 @@ struct domino
   int setTwo;
 };
 
-//Write code that prints the contents of the sorted dominoes array using asterisks (*) 
+void drawAsterix(domino dominoArray[], int arraySize) {
 
-void drawAsterix(domino dominoArray[], int arraySize){
+  int row = 3;
+  int column = 3;
 
-  int index = 0;
+  int numberOne;
+  int numberTwo;
 
-  while(index < arraySize){
+  for (int i = 0; i < row; i++) {
 
-    int row = 0;
-    int column = 0;
+    for (int j = 0; j < column; j++) {
 
-    for (int i = 0; i < row; i++){
+      for (int index = 0; index < arraySize; index++) {
 
-      for (int j = 0; j < column; j++){
+        numberOne = dominoArray[index].setOne;
+        numberTwo = dominoArray[index].setTwo;  
 
-        if (dominoArray[index].setOne == 0 || dominoArray[index].setTwo == 0){
+        cout << "numberOne" << numberOne << endl;
+        cout << "numberTwo" << numberTwo << endl;
+
+        cout << "       " << endl;
+        cout << "-------" << endl;
+        numberOne;
+        cout << "-------" << endl;
+        numberTwo;
+        cout << "-------" << endl;
+        cout << "       " << endl;
+
+        if (numberOne == 0 || numberTwo == 0) {
           // do nothing
         }
 
-        else if (dominoArray[index].setOne == 1 || dominoArray[index].setTwo == 1){
-          if (row == 2 && column == 2){
+        else if (numberOne == 1 || numberTwo == 1) {
+          if (row == 2 && column == 2) {
             cout << "#" << endl;
           }
         }
 
-        else if (dominoArray[index].setOne == 2 || dominoArray[index].setTwo == 2){
-          if ((row == 1 && column == 1) || (row == 3 && column == 3)){
+        else if (numberOne == 2 || numberTwo == 2) {
+          if ((row == 1 && column == 1) || (row == 3 && column == 3)) {
             cout << "#" << endl;
           }
         }
 
-        else if (dominoArray[index].setOne == 3 || dominoArray[index].setTwo == 3){
-          if ((row == 1 && column == 1) || (row == 2 && column == 2) || (row == 3 && column == 3)){
+        else if (numberOne == 3 || numberTwo == 3) {
+          if ((row == 1 && column == 1) || (row == 2 && column == 2) || (row == 3 && column == 3)) {
             cout << "#" << endl;
           }
         }
 
-        else if (dominoArray[index].setOne == 4|| dominoArray[index].setTwo == 4){
+        else if (numberOne == 4|| numberTwo == 4) {
           if ((row == 1 && column == 1) || (row == 1 && column == 3) || (row == 3 && column == 1) 
-            || (row == 3 && column == 3)){
+            || (row == 3 && column == 3)) {
             cout << "#" << endl;
           }
         }
 
-        else if (dominoArray[index].setOne == 5 || dominoArray[index].setTwo == 5){
+        else if (numberOne == 5 || numberTwo == 5) {
           if ((row == 1 && column == 1) || (row == 1 && column == 3) || (row == 2 && column == 2) 
-          ||(row == 3 && column == 1) || (row == 3 && column == 3)){
+          ||(row == 3 && column == 1) || (row == 3 && column == 3)) {
             cout << "#" << endl;
           }
         }
 
-        else if (dominoArray[index].setOne == 6 || dominoArray[index].setTwo == 6){
+        else if (numberOne == 6 || numberTwo == 6){
           if ((row == 1 && column == 1) || (row == 1 && column == 2) || (row == 1 && column == 3) 
           ||(row == 3 && column == 1) || (row == 3 && column == 2) || (row == 3 && column == 3)){
             cout << "#" << endl;
           }
         }
 
-        cout << "       " << endl;
-        cout << "-------" << endl;
-        dominoArray[index].setOne;
-        cout << "-------" << endl;
-        dominoArray[index].setTwo;
-        cout << "-------" << endl;
-        cout << "       " << endl;
-
-        index++;
+        else {cout << " " << endl;}
 
       }
-    }
+    } 
   }
 }
 
@@ -90,19 +95,22 @@ int main(){
 
   //create array using loops (no matter the domino order)
   //the array is populated with the following logic:
-  //setOne number stays the same until setTwo is populated 0-6 in line 107
-  //when the setNumber is updated(++;) and setTwo starts with the same number in line 109
+  //setOne number stays the same until setTwo is populated 0-6 
+  //when the setNumber is updated(++;) and setTwo starts with the same number 
 
   const int maxTileNumber = 6;
   int i = 0; //fills first tile number(upper)
   int j = 0; //fills second tile number (lower)
 
+  int numberOne;
+  int numberTwo;
+
   int index = 0; 
   while (index < arraySize) {
     //while loops as I need to control where i/j are updated 
-    while (i <= 6){ 
+    while (i <= 6) { 
 
-      while (j <= 6){
+      while (j <= 6) {
 
         dominoArray[index].setOne = i;
         dominoArray[index].setTwo = j;
@@ -110,7 +118,7 @@ int main(){
         j++; 
         //j == (maxTileNumberInRow + 1) accounts for the j update in this place
 
-        if (j == (maxTileNumber+ 1) && i <= 6){
+        if (j == (maxTileNumber + 1) && i <= 6){
           i++; 
           j = i;
         }
@@ -125,7 +133,7 @@ int main(){
   domino indexTemp;
   int randomDominoIndex = 0;
 
-  for (int index = 0; index < arraySize; index++){
+  for (int index = 0; index < arraySize; index++) {
     indexTemp = dominoArray[index];
     randomDominoIndex  = (int) rand() % 27 + 0;
     dominoArray[index] = dominoArray[randomDominoIndex];
@@ -133,12 +141,9 @@ int main(){
   }
 
   //this is supposed to print the newly sorted array with asterixes
-
-  drawAsterix(dominoArray, arraySize); 
-  // maybe do another loop just with index (numbers of objects in the array)
-  // while "calling" this function
-
-
+  //Write code that prints the contents of the sorted dominoes array using asterisks (*) 
+  drawAsterix(dominoArray, arraySize);
+  
   return(0);
 
 }
