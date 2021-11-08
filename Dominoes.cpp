@@ -135,6 +135,9 @@ int main(){
   //this is supposed to print the newly sorted array with asterixes
 
   drawAsterix(dominoArray, arraySize); 
+  // maybe do another loop just with index (numbers of objects in the array)
+  // while "calling" this function
+
 
   return(0);
 
