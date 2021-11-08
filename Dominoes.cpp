@@ -25,14 +25,14 @@ void drawAsterix(domino dominoArray[], int arraySize) {
         numberOne = dominoArray[index].setOne;
         numberTwo = dominoArray[index].setTwo;  
 
-        cout << "numberOne" << numberOne << endl;
-        cout << "numberTwo" << numberTwo << endl;
+        //cout << "numberOne" << numberOne << endl;
+        //cout << "numberTwo" << numberTwo << endl;
 
         cout << "       " << endl;
         cout << "-------" << endl;
-        numberOne;
+        numberOne; //trying to get the below code to print stuff here depending on value of numberOne
         cout << "-------" << endl;
-        numberTwo;
+        numberTwo;//trying to get the below code to print stuff here depending on value of numberTwo
         cout << "-------" << endl;
         cout << "       " << endl;
 
