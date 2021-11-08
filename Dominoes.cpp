@@ -10,56 +10,54 @@ struct domino
 
 //Write code that prints the contents of the sorted dominoes array using asterisks (*) 
 
-int drawAsterix(domino dominoArray[], int number, int arraySize){
+void drawAsterix(domino dominoArray[], int arraySize){
 
   for (int index = 0; index < arraySize; index++){
 
-  int row = 0;
-  int column = 0;
-  
-  int number = 0;
+    int row = 0;
+    int column = 0;
 
     for (int i = 0; i < row; i++){
 
       for (int j = 0; j < column; j++){
 
-        if (number == 0 || number == 0){
+        if (dominoArray[index].setOne == 0 || dominoArray[index].setTwo == 0){
           // do nothing
         }
 
-        else if (number == 1 || number == 1){
+        else if (dominoArray[index].setOne == 1 || dominoArray[index].setTwo == 1){
           if (row == 2 && column == 2){
             cout << "#" << endl;
           }
         }
 
-        else if (number == 2 || number == 2){
+        else if (dominoArray[index].setOne == 2 || dominoArray[index].setTwo == 2){
           if ((row == 1 && column == 1) || (row == 3 && column == 3)){
             cout << "#" << endl;
           }
         }
 
-        else if (number == 3 || number == 3){
+        else if (dominoArray[index].setOne == 3 || dominoArray[index].setTwo == 3){
           if ((row == 1 && column == 1) || (row == 2 && column == 2) || (row == 3 && column == 3)){
             cout << "#" << endl;
           }
         }
 
-        else if (number == 4|| number == 4){
+        else if (dominoArray[index].setOne == 4|| dominoArray[index].setTwo == 4){
           if ((row == 1 && column == 1) || (row == 1 && column == 3) || (row == 3 && column == 1) 
             || (row == 3 && column == 3)){
             cout << "#" << endl;
           }
         }
 
-        else if (number == 5 || number == 5){
+        else if (dominoArray[index].setOne == 5 || dominoArray[index].setTwo == 5){
           if ((row == 1 && column == 1) || (row == 1 && column == 3) || (row == 2 && column == 2) 
           ||(row == 3 && column == 1) || (row == 3 && column == 3)){
             cout << "#" << endl;
           }
         }
 
-        else if (number == 6 || number == 6){
+        else if (dominoArray[index].setOne == 6 || dominoArray[index].setTwo == 6){
           if ((row == 1 && column == 1) || (row == 1 && column == 2) || (row == 1 && column == 3) 
           ||(row == 3 && column == 1) || (row == 3 && column == 2) || (row == 3 && column == 3)){
             cout << "#" << endl;
@@ -67,11 +65,19 @@ int drawAsterix(domino dominoArray[], int number, int arraySize){
         }
       }
     }
-  } 
-
-  return number;
+  
+    cout << "       " << endl;
+    cout << "-------" << endl;
+    dominoArray[index].setOne;
+    cout << "-------" << endl;
+    dominoArray[index].setTwo;
+    cout << "-------" << endl;
+    cout << "       " << endl;
+  
+  }
 
 }
+
 
 int main(){
 
@@ -123,21 +129,9 @@ int main(){
     dominoArray[randomDominoIndex]= indexTemp;
   }
 
-
   //this is supposed to print the newly sorted array with asterixes
-  // by calling that function and printing the number
-  
-  for (int index = 0; index < arraySize; index++){
 
-    cout << "       " << endl;
-    cout << "-------" << endl;
-    cout << drawAsterix(dominoArray, dominoArray[index].setOne, arraySize) << endl;
-    cout << "-------" << endl;
-    cout << drawAsterix(dominoArray, dominoArray[index].setTwo, arraySize) << endl;
-    cout << "-------" << endl;
-    cout << "       " << endl;
-    
-  }
+  drawAsterix(dominoArray, arraySize); 
 
   return(0);
 
